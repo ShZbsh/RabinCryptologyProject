@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            font-family: 'Calibri', sans-serif; /* Use a generic sans-serif font as a fallback */
+        }
+    </style>
+    <title>Rabin Encryption</title>
+</head>
+
+<body>
+    <div id="encyptionDiv">
+        <h2>Encryption-Шифрирање</h2>
+
+        <label for="publicKey">Јавен клуч</label>
+        <input type="number" id="publicKey" placeholder="Enter Public Key" required>
+        <br>
+
+        <label for="plaintext">Обичен текст:</label>
+        <input type="number" id="plaintext" placeholder="Enter Plaintext" required>
+        <br>
+
+        <button onclick="calculateModulo()">Шифрирај</button>
+
+        <p id="result"></p>
+    </div>
+
+    <!-- decryption -->
+    <div id="decryptionDiv">
+        <h2>Decryption-Дешифрирање</h2>
+        <p id="napomena">Напомена: изберете еден од следниве броеви 3,7,11,19,23</p>
+        <label for="encrypted">Шифриран текст:</label>
+        <input type="number" id="encrypted" placeholder="Enter Encrypted message" required><br>
+        <label for="p">Вредноста на приватен клуч p:</label>
+        <input type="number" id="p" placeholder="Enter Private Key p" required><br>
+        <label for="q">Вредноста на приватен клуч q:</label>
+        <input type="number" id="q" placeholder="Enter Private Key q" required><br>
+        <button id="decrypt">Дешифрирај</button>
+        <p id="decryption"></p>
+    </div>
+    <hr>
+    <div id="stepbystep">
+        <h2>Дешифрирање чекор по чекор</h2>
+        <div id="mDiv">
+            <h3>Пресметај ги m_p и m_q</h3>
+            <p>Пресметувaме m_p и m_q: <br>
+                m_p=c^((p+1)/4)  mod p,
+                m_q=c^((q+1)/4)  mod q
+                </p>
+            <p id="mpmq"></p>
+            <button id="calculateMpMq">Пресметај </button>
+        </div>
+        <hr>
+        <!-- Extended euclidean algorithm -->
+        <div id="extendedDiv">
+            <h3>Проширениот Евклидов алгоритам за p и q</h3>
+            <p>Пресметуваме вредностите на y_p и y_q такви што <br>
+                y_p*p+y_q*q=1 со проширениот Евклидов алгоритам
+                </p>
+
+            <br>
+            <button id="egcdButton">Пресметај</button>
+
+            <p id="resultEGCD"></p>
+        </div>
+        <hr>
+        
+        <div id="rsDiv">
+            <h3>Пресметај ги r и s</h3>
+            <p>Пресметуваме r и s такви што <br>
+                r=(y_p*p*m_q+ y_q*q*m_p )  mod n, <br>
+                s=(y_p*p*m_q- y_q*q*m_p )  mod n.
+                </p>
+            <p id="rs"></p>
+            <button id="calculateRS">Пресметај</button>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"> </script>
+
+</html>

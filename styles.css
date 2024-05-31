@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Calibri';
+    src: url('path/to/calibri.woff2') format('woff2'),
+         url('path/to/calibri.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Calibri', sans-serif;
+}
+body {
+    font-family: 'Calibri', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#encyptionDiv, #decryptionDiv, #stepbystep {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#napomena{
+    color: red;
+}
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #217dbb;
+}
+
+#result, #decryption, #mpmq, #rs {
+    margin-top: 20px;
+    color: #333;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+#calculateMpMq, #calculateRS, #egcdButton {
+    background-color: #27ae60;
+}
+
+#calculateMpMq:hover, #calculateRS:hover, #egcdButton:hover {
+    background-color: #219052;
+}
